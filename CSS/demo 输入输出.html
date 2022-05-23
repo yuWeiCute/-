@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>主页面</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // js中变量的作用域链与定义时的环境有关，与执行时无关。执行环境只会改变this、传递的参数、全局变量等
+    /*     for(var i=0;i<5;i++)
+        (function (x){
+            setTimeout(function (){
+                console.log (++x)
+            },4000);
+        })(i)
+        console. log(i) */
+    /*     var name = '＇小红＇';
+        function a() {
+            var name = '＇小白＇';
+            console.log(this.name);
+        }
+        function d(i) {
+            return i();
+        }
+        var b = {
+            name: '小黄',
+            detail: function () {
+                console.log(this.name);
+            },
+            bibi: function () {
+                return function () {
+                    console.log(this.name);
+                };
+            }
+        }
+        var c = b.detail;
+        b.a = a;
+        var e = b.bibi();
+        a();
+        c();
+        b.a();
+        d(b.detail);
+        e(); */
+    /* var a = 3;
+    function c() {
+        alert(a);
+    }
+    (function () {
+        var a = 4;
+        c();
+    })(); */
+    /* var a = function () { this.b = 3 };
+    var c = new a();
+    a.prototype.b = 9;
+    var b = 7;
+    a();
+    console.log(b);
+    console.log(c.b); */
+    /*     function A() {
+            this.name = 1
+        }
+        function B() {
+            this.name = 2
+        }
+        let a = new A()
+        let b = new B()
+        A.prototype.constructor = B
+        console.log(a.name)
+        let a1 = new A()
+        console.log(a1.name)
+        console.log(a1.__proto__.constructor === A) */
+    /* var a = 0, b = 0;
+    function A(a) {
+        A = function (b) {
+            alert(a + b++)
+        }
+        alert(a++)
+    }
+    A(1)
+    A(2) */
+
+    /*     Array.prototype.method = function () {
+            console.log(this.length);
+        }
+        var myArray = [1, 2, 4, 5, 6, 7]
+        myArray.name = "数组"
+        for (var index in myArray) {
+            console.log(myArray[index]);
+        } */
+
+        var a=3;
+ function c(){
+    alert(a);
+ }
+ (function(){
+  var a=4;
+  c();
+ })();
+</script>
+
+</html>

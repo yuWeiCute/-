@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>主页面</title>
+
+    <!-- 方法一：绝对定位 -->
+    <style type="text/css">
+        .left {
+            position: absolute;
+            width: 100px;
+            height: 300px;
+            left: 0;
+            background: #269ABC;
+        }
+
+        .right {
+            position: absolute;
+            width: 100px;
+            height: 300px;
+            background: #398439;
+            right: 0;
+        }
+
+        .center {
+            position: absolute;
+            left: 100px;
+            right: 100px;
+            height: 300px;
+            background: #669900;
+        }
+    </style>
+
+    <!-- 方法二：flex布局 -->
+    <style type="text/css">
+        .div {
+            display: flex;
+            flex-direction: row | row-reverse | column | column-reverse;
+        }
+
+        .left {
+            width: 100px;
+            height: 300px;
+            left: 0;
+            background: #269ABC;
+        }
+
+        .right {
+            width: 100px;
+            height: 300px;
+            background: #398439;
+            right: 0;
+        }
+
+        .center {
+            flex: 1;
+            height: 300px;
+            background: #669900;
+        }
+    </style>
+
+    <!-- 3、float布局 -->
+    <style type="text/css">
+        .left {
+            width: 100px;
+            height: 300px;
+            float: left;
+            background: #269ABC;
+        }
+
+        .right {
+            width: 100px;
+            height: 300px;
+            background: #398439;
+            float: right;
+        }
+
+        .center {
+            margin-left: 100px;
+            margin-right: 100px;
+            height: 300px;
+            background: #669900;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="left">1111</div>
+    <div class="center">1212</div>
+    <div class="right">222</div>
+
+</body>
+
+</html>
