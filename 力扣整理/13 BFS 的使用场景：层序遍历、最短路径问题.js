@@ -51,3 +51,7 @@ var maxDistance = function (grid) {
     }
     return maxDis-2
 };
+
+
+
+

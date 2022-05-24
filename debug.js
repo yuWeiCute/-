@@ -171,7 +171,7 @@ function g() { return false; };
 })();
 console.log(f()); */
 
-function A() {
+/* function A() {
     this.name = 1
 }
 function B() {
@@ -183,4 +183,35 @@ A.prototype.constructor = B
 console.log(a.name)
 let a1 = new A()
 console.log(a1.name)
-console.log(a1.__proto__.constructor === A)
+console.log(a1.__proto__.constructor === A) */
+
+/* var zeroesForeverIterator = {
+    [Symbol.iterator]: function () {
+        return this;
+    },
+    next: function () {
+        return { done: false, value: 0 };
+    }
+};
+ */
+
+function compose(...funcs) {
+    // funcs接收的就是所有传递进来的函数
+    return function anonymous(val) {
+        // val第一个函数执行时候需要的实参  0
+        if (funcs.length === 0) return val;
+        if (funcs.length === 1) return funcs[0](val);
+        return funcs.reverse().reduce((x, y) => {
+            // return typeof x === "function" ? y(x(...args)) : y(x)
+            return y(x)
+        }, val);
+    };
+}
+const add1 = (x) => x + 1;
+const mul3 = (x) => x * 3;
+const div2 = (x) => x / 2;
+const operate = compose(div2, mul3, add1, add1)
+console.log(operate(0)); //=>相当于div2(mul3(add1(add1(0)))) 
+console.log(operate(2)); //=>相当于div2(mul3(add1(add1(2))))
+
+

@@ -5,48 +5,18 @@
     <meta charset="utf-8" />
     <title>主页面</title>
     <style>
-        .card-li {
-            float: left;
-            margin-right: 42px;
-            width: 84px;
-            height: 228px;
-            background: #fff;
-            border: 1px solid #d9ddea;
-            box-shadow: 0 1px 5px 0 rgb(217 221 234 / 56%);
-            border-radius: 42px;
-            padding-top: 36px;
-            text-align: center;
-            transform-origin: 42px 36px;
+        #parent {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            /*  stretch让盒子内的每个元素的高度都等于行高 */
+            align-items: stretch;
+            width: 300px;
         }
 
-        .card-li.baidong {
-            animation: rotate5 5s ease-in-out;
-        }
-
-        @-webkit-keyframes rotate5 {
-            0% {
-                -webkit-transform: rotate(0deg);
-            }
-
-            20% {
-                -webkit-transform: rotate(9deg);
-            }
-
-            40% {
-                -webkit-transform: rotate(-9deg);
-            }
-
-            60% {
-                -webkit-transform: rotate(-3deg);
-            }
-
-            80% {
-                -webkit-transform: rotate(3deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(0deg);
-            }
+        #child {
+            width: 100px;
+            outline: solid 1px;
         }
     </style>
 
@@ -66,7 +36,7 @@
                 var obj = document.getElementById("abc" + i)
                 obj.className = "card-li baidong"
             }
-            
+
         </script>
 
 </body>

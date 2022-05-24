@@ -15,3 +15,13 @@ localStorage.__proto__.myGet = function (key) {
     }
     return item.data
 }
+
+
+
+
+
+
+
+
+
+
